@@ -1,0 +1,38 @@
+https://cakeapi.vijayphysics.com/api/v1/customer/register
+
+GET
+POST
+PUT
+PATCH
+DELETE
+
+
+200
+300
+400
+404
+500
+
+/register : POST
+/login : POST
+
+
+
+Router => Middleware=> Controller <=> Services <=> Model
+
+
+npm : node package manager
+
+npm i/install -> install all
+npm i packageName -> install particular package
+npm i packageName packageName
+
+npm init : to initilize the project
+
+npm start : to start the server
+npm run dev : to start the server as development
+
+
+
+
+
