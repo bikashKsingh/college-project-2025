@@ -3,11 +3,14 @@ const app = express();
 const userController = require("./controllers/userController");
 const bodyParser = require("body-parser");
 const port = 4000;
+const dbConnection = require("./database/dbConnection");
 
 // body parser middleware
 app.use(bodyParser.json());
 // app.use(express.json());
 
+// connect database
+dbConnection.connectDb();
 // route
 // app.get("/", function (req, res) {
 //   res.send("Welcom to Express");

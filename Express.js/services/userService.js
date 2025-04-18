@@ -1,14 +1,25 @@
 module.exports.users = [];
+const UserModel = require("../database/model/userModel");
 
-module.exports.create = function (serviceData) {
-  this.users.push(serviceData);
+module.exports.create = async function (serviceData) {
+  try {
+    let response = {};
+    let user = {
+      name: serviceData.name,
+      email: serviceData.email,
+      mobile: serviceData.mobile,
+    };
 
-  let response = {
-    message: "User Created",
-    body: serviceData,
-  };
+    const newData = new UserModel(user);
+    const result = await newData.save();
 
-  return response;
+    response.message = "Data Created";
+    response.body = result;
+
+    return response;
+  } catch (error) {
+    console.log("service : userService : create\nError : ", error.message);
+  }
 };
 
 module.exports.findAll = function (serviceData) {
