@@ -7,12 +7,12 @@ module.exports.create = async function (req, res) {
   res.send(response);
 };
 
-module.exports.findAll = function (req, res) {
-  const response = userService.findAll();
+module.exports.findAll = async function (req, res) {
+  const response = await userService.findAll();
   res.send(response);
 };
 
-module.exports.findOne = function (req, res) {
-  const response = userService.findOne(req.params);
+module.exports.findOne = async function (req, res) {
+  const response = await userService.findOne(req.params);
   res.send(response);
 };
